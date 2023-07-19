@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: GothamNarrow;
+  src: url(./gotham_type_face/GothamNarrow-Medium.otf);
+}
+@font-face {
+  font-family: GothamNarrowBold;
+  src: url(./gotham_type_face/GothamNarrow-Bold.otf);
+}
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+  color: #302050;
+  font-family: GothamNarrowBold, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(47, 47, 215);
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+p:last-child {
+  margin-bottom: 0px;
+}
+
+body {
+  font-family: GothamNarrow, sans-serif;
+  padding: 0px 16px 48px 16px;
+  background: url("./bg.webp");
+  /* background: hsla(25, 74%, 68%, 0.5); */
+  background: linear-gradient(135deg, hsl(25, 74%, 68%) 0%, hsla(299, 63%, 75%, 0.1) 100%), url("landingpagepic.jpg");
+  color: #4d3974;
+}
+body header {
+  text-transform: capitalize;
+  text-align: center;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  border: solid rgba(149, 148, 148, 0.3);
+  border-width: 0 0 1px 0;
+}
+body section.container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: start;
+}
+@media (max-width: 1120px) {
+  body section.container {
+    flex-direction: column;
+    align-items: center;
+  }
+  body section.container .left {
+    width: 100%;
+    max-width: 650px;
+    top: auto;
+  }
+  body section.container .left .trailer {
+    width: 100%;
+  }
+  body section.container .left .other-upcoming {
+    display: none;
+  }
+}
+@media (min-width: 1120px) {
+  body section.container .left {
+    position: sticky;
+    top: 16px;
+  }
+  body section.container .other-upcoming ul {
+    max-width: 560px;
+    padding-right: 16px;
+  }
+}
+body section.container .left {
+  display: flex;
+  flex-direction: column;
+}
+body section.container .left .trailer {
+  border-radius: 24px;
+}
+body section.container .left .other-upcoming {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+body section.container .left .other-upcoming ul {
+  overflow-x: scroll;
+  display: flex;
+  gap: 16px;
+}
+body section.container .left .other-upcoming ul li {
+  width: fit-content;
+  cursor: pointer;
+}
+body section.container .left .other-upcoming ul li img {
+  border-radius: 16px;
+}
+body section.container .content {
+  max-width: 650px;
+}
+body section.container .content h1.movie-title {
+  letter-spacing: 6px;
+}
+@media (max-width: 1120px) {
+  body section.container .content h1.movie-title {
+    font-size: 32px;
+  }
+}
+body section.container .content .movie-title {
+  font-size: 56px;
+}
+body section.container .content .release .count-down {
+  display: flex;
+  gap: 8px;
+}
+body section.container .content .release .count-down li {
+  padding: 12px;
+  border-radius: 12px;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(149, 148, 148, 0.3);
+}
+body section.container .content .synopsis {
+  overflow: hidden;
+  position: relative;
+  transition: 0, 5s;
+  height: fit-content;
+}
+body section.container .content .synopsis[data-compressed] {
+  height: 300px;
+}
+body section.container .content .synopsis[data-compressed][data-compressed]::after {
+  content: "";
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, hsl(25, 74%, 68%) 100%);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+body section.container .content .synopsis[data-compressed][data-compressed]::after #synopsis-button {
+  content: "noice tings";
+}
+body section.container .content .synopsis #synopsis-button {
+  padding: 4px 8px;
+  background-color: transparent;
+  border-radius: 32px;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(99, 99, 226, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  right: 8px;
+  z-index: 5;
+}
+body section.container .content > div {
+  margin-bottom: 16px;
+}
+body section.container .content > div h2 {
+  margin-bottom: 8px;
+}
+body section.container .content > div:last-child {
+  margin-bottom: 0px;
+}
+
+ul.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+ul.chips li {
+  padding: 6px 12px;
+  background-color: rgba(149, 148, 148, 0.3);
+  border-radius: 32px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+ul.chips li:hover {
+  filter: brightness(1.25);
+}
