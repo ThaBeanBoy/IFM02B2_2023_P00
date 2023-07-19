@@ -46,9 +46,8 @@ p:last-child {
 body {
   font-family: GothamNarrow, sans-serif;
   padding: 0px 16px 48px 16px;
-  background: url("./bg.webp");
   /* background: hsla(25, 74%, 68%, 0.5); */
-  background: linear-gradient(135deg, hsl(25, 74%, 68%) 0%, hsla(299, 63%, 75%, 0.1) 100%), url("landingpagepic.jpg");
+  background: linear-gradient(135deg, hsl(25, 74%, 68%) 0%, hsla(299, 63%, 75%, 0.1) 100%);
   color: #4d3974;
 }
 body header {
@@ -78,8 +77,8 @@ body section.container {
   body section.container .left .trailer {
     width: 100%;
   }
-  body section.container .left .other-upcoming {
-    display: none;
+  body section.container .other-upcoming {
+    display: none !important;
   }
 }
 @media (min-width: 1120px) {
@@ -103,7 +102,6 @@ body section.container .left .other-upcoming {
   display: flex;
   flex-direction: column;
   margin-top: 24px;
-  display: flex;
   gap: 12px;
 }
 body section.container .left .other-upcoming ul {

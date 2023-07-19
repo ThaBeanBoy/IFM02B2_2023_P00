@@ -55,15 +55,14 @@ body {
   padding: 0px 16px 48px 16px;
   // max-width: 1160px;
 
-  background: url('./bg.webp');
+  // background: url(./bg.webp);
   /* background: hsla(25, 74%, 68%, 0.5); */
 
   background: linear-gradient(
-      135deg,
-      hsla(25, 74%, 68%, 1) 0%,
-      hsla(299, 63%, 75%, 0.1) 100%
-    ),
-    url('landingpagepic.jpg');
+    135deg,
+    hsla(25, 74%, 68%, 1) 0%,
+    hsla(299, 63%, 75%, 0.1) 100%
+  );
 
   color: #4d3974;
 
@@ -96,10 +95,10 @@ body {
         .trailer {
           width: 100%;
         }
-        .other-upcoming {
-          //! Supposed to move to bottom of screen in mobile view
-          display: none;
-        }
+      }
+
+      .other-upcoming {
+        display: none !important;
       }
     }
 
@@ -110,6 +109,7 @@ body {
       }
 
       .other-upcoming {
+        // display: flex;
         ul {
           max-width: 560px;
           padding-right: 16px;
@@ -129,7 +129,6 @@ body {
         display: flex;
         flex-direction: column;
         margin-top: 24px;
-        display: flex;
         gap: 12px;
 
         ul {
