@@ -77,18 +77,11 @@ body section.container {
   body section.container .left .trailer {
     width: 100%;
   }
-  body section.container .other-upcoming {
-    display: none !important;
-  }
 }
 @media (min-width: 1120px) {
   body section.container .left {
     position: sticky;
     top: 16px;
-  }
-  body section.container .other-upcoming ul {
-    max-width: 560px;
-    padding-right: 16px;
   }
 }
 body section.container .left {
@@ -97,24 +90,6 @@ body section.container .left {
 }
 body section.container .left .trailer {
   border-radius: 24px;
-}
-body section.container .left .other-upcoming {
-  display: flex;
-  flex-direction: column;
-  margin-top: 24px;
-  gap: 12px;
-}
-body section.container .left .other-upcoming ul {
-  overflow-x: scroll;
-  display: flex;
-  gap: 16px;
-}
-body section.container .left .other-upcoming ul li {
-  width: fit-content;
-  cursor: pointer;
-}
-body section.container .left .other-upcoming ul li img {
-  border-radius: 16px;
 }
 body section.container .content {
   max-width: 650px;
@@ -201,4 +176,45 @@ ul.chips li {
 }
 ul.chips li:hover {
   filter: brightness(1.25);
+}
+
+.other-upcoming:not(.mobile) {
+  display: none !important;
+}
+.other-upcoming:not(.mobile) ul {
+  max-width: 560px;
+  padding-right: 16px;
+}
+@media (min-width: 1120px) {
+  .other-upcoming:not(.mobile) {
+    display: flex !important;
+  }
+}
+
+.other-upcoming {
+  max-width: 650px;
+}
+@media (min-width: 1120px) {
+  .other-upcoming {
+    display: none !important;
+  }
+}
+
+.other-upcoming {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 12px;
+}
+.other-upcoming ul {
+  overflow-x: scroll;
+  display: flex;
+  gap: 16px;
+}
+.other-upcoming ul li {
+  width: fit-content;
+  cursor: pointer;
+}
+.other-upcoming ul li img {
+  border-radius: 16px;
 }
